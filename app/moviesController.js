@@ -24,7 +24,7 @@ exports.getMovies = async function(req, res){
   const url = `https://api.themoviedb.org/3/trending/all/day?api_key=${config.moviedb_key}`;
   try {
     const response = await axios.get(url);
-    res.status(200).json({ status: 'success', data: response });
+    res.status(200).json({ status: 'success', data: response.data });
   } catch (error) {
     res.status(400).json({ status: 'error', message: error });
   }
