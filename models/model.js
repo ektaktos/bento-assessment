@@ -9,7 +9,7 @@ let userSchema = new Schema({
     google_token: { type: String }
 });
 
-let moviesSchema = newSchema({
+let moviesSchema = new Schema({
   movie_id: { type: String },
   user_email: { type: String },
   movie_title: { type: String },

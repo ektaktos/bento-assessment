@@ -2,7 +2,6 @@ const models = require('../models/model');
 const bcrypt = require('bcrypt');
 const key = require('./key');
 const jwt = require('jsonwebtoken');
-const email = require('./email');
 var User = models.userModel;
 
 exports.test = function(req, res) {
@@ -15,7 +14,7 @@ exports.test = function(req, res) {
 exports.register = function(req, res) {
     var mail = req.body.email;
     var password = req.body.password;
-    User.findOne({ email: mail }, function(err, user) {
+    User.findOne({ email: mail }, async function(err, user) {
         if (err) {
             return res.json({ status: 'error', message: err });
         }
