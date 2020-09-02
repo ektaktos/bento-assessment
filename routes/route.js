@@ -12,8 +12,9 @@ router.post('/login', authController.login);
 router.get('/user/:id', authController.getUser);
 
 // Plans routes
-router.get('movies', validateToken, moviesController.getMovies);
-router.post('movie/add', validateToken, moviesController.newMovie);
+router.get('/test', moviesController.test);
+router.get('/movies', moviesController.getMovies);
+router.post('/movie/add', validateToken, moviesController.newMovie);
 router.put('/movie/edit/:id', validateToken, moviesController.editMovie);
 router.delete('/movie/delete/:id', validateToken, moviesController.deleteMovie);
 

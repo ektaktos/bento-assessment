@@ -5,12 +5,9 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyparser = require('body-parser');
 const routes = require('./routes/route');
-const authController = require('./app/authController');
-const moviesController = require('./app/moviesController');
-const validateToken = require('./app/middleware').checkToken;
 
-app.use(bodyparser.json());
-app.use(bodyparser.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 app.use(routes);
 

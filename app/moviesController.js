@@ -14,7 +14,13 @@ async function generateId() {
   }
 }
 
+exports.test = function(req, res) {
+  res.json({ message: "Welcome here hooooo" });
+};
+
+
 exports.getMovies = async function(req, res){
+  console.log('hello');
   const url = `https://api.themoviedb.org/3/trending/all/day?api_key=${config.moviedb_key}`;
   try {
     const response = await axios.get(url);
