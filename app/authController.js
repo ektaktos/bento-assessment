@@ -5,10 +5,7 @@ const jwt = require('jsonwebtoken');
 var User = models.userModel;
 
 exports.test = function(req, res) {
-    generateId().then(data => {
-        console.log("Promised data is " + data);
-        res.json({ id: data });
-    });
+    res.json({ message: "Welcome here" });
 };
 
 exports.register = function(req, res) {

@@ -6,6 +6,7 @@ const validateToken = require('../app/middleware').checkToken;
 
 
 // Users Routes
+router.get('/', authController.test);
 router.post('/register', authController.register);
 router.post('/login', authController.login);
 router.get('/user/:id', authController.getUser);
